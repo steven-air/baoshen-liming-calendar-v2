@@ -66,3 +66,57 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;ba
 .safe-note b{display:block;font-size:9px;font-weight:600;white-space:nowrap}
 .safe-note small{display:block;margin-top:2px;font-size:8px;white-space:nowrap}
 @media(max-width:560px){.safe-note{margin-top:5px}.safe-note b,.safe-note small{font-size:7px;white-space:normal}}
+
+/* 选日详情与浅绿色日历纸张统一，避免深色面板抢走日期格的视觉层级。 */
+.day-drawer{
+  background:#e5efe3;
+  color:var(--ink);
+  border:1px solid #a9c4b0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);
+}
+.day-drawer:before{border-color:#a9c4b0;background:rgba(216,232,218,.45)}
+.drawer-cap{color:#4e7567}
+.drawer-mark{color:var(--amber)}
+.drawer-date span{color:#55766a}
+.drawer-date strong{color:var(--ink)}
+.drawer-date span:last-child{color:#486c5e}
+.drawer-rule{background:#a5c1ad}
+.drawer-label{color:#9a6c25}
+.drawer-status{border-color:#90b49b;color:#315f50;background:rgba(255,255,255,.34)}
+.drawer-status.major{border-color:#c56b61;color:#963c35;background:#f1d0cb}
+.drawer-status.minor{border-color:#db9b67;color:#a65f2e;background:#f8dfc4}
+.drawer-status.zhai{border-color:#cfaa4f;color:#87631e;background:#f4e4b3}
+.drawer-status.safe{border-color:#8ebc99;color:#39735a;background:#d3e7d4}
+.drawer-section p{color:#4a6b5f}
+.drawer-close{border-color:#8eb49a;color:#3e6b5a;background:rgba(255,255,255,.35)}
+.drawer-close:hover{background:#2f6958;color:#f6fbf2}
+@media print{
+  .day-drawer{background:#e5efe3;color:#173f3d;border-color:#789b87}
+  .drawer-date span,.drawer-section p,.drawer-cap{color:#315f50}
+  .drawer-status{color:#173f3d!important;border-color:#789b87!important;background:#e5efe3!important}
+}
+
+/* 原网页文章区：使用长卷式宣纸排版，完整承载天地人忌与求子三要。 */
+.classics-section{padding:58px 7px 0}
+.classics-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:20px}
+.classics-heading h2{margin:0;font-family:var(--brush);font-size:37px;font-weight:400;letter-spacing:5px}
+.classics-heading>p{max-width:400px;margin:0;color:var(--ink-soft);font-size:12px;line-height:1.8;text-align:right}
+.classic-article{position:relative;padding:26px 30px 28px;background:rgba(251,248,238,.78);border:1px solid var(--line);border-top:3px solid var(--vermilion);box-shadow:0 9px 26px rgba(42,57,48,.06)}
+.child-article{margin-top:18px;border-top-color:var(--amber)}
+.article-ribbon{display:flex;align-items:baseline;gap:12px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.article-ribbon span{font-family:var(--brush);font-size:28px;color:var(--vermilion)}
+.article-ribbon b{font-family:var(--brush);font-size:29px;font-weight:400;letter-spacing:5px}
+.article-ribbon small{margin-left:auto;color:var(--ink-soft);font-size:11px;letter-spacing:1px}
+.article-intro,.article-summary{max-width:940px;margin:16px 0;color:#4e6259;font-size:13px;line-height:2;text-align:justify}
+.avoid-grid{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:15px;margin-top:19px}
+.avoid-column{padding:16px 18px;background:rgba(238,246,234,.6);border:1px solid #cad8c5}
+.avoid-column h3{display:flex;align-items:center;gap:8px;margin:0 0 11px;padding-bottom:9px;border-bottom:1px solid #c7d5c2;font-family:var(--brush);font-size:24px;font-weight:400;letter-spacing:3px}
+.avoid-column h3 span{display:grid;place-items:center;width:28px;height:28px;color:#fff;background:#4e8278;border-radius:50%;font-size:17px}
+.earth-column h3 span{background:#ae7547}.human-column h3 span{background:var(--vermilion)}
+.avoid-list{list-style:none;margin:0;padding:0}.avoid-list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed #d0d8c9;color:var(--ink-soft);font-size:11px;line-height:1.55}.avoid-list li:last-child{border-bottom:0}.avoid-list b{color:var(--ink);font-weight:600}.avoid-list span{text-align:right}
+.article-callout{margin-top:18px;padding:13px 16px;background:#f4e8c7;border-left:3px solid var(--amber);color:#6e603f;font-size:12px;line-height:1.9}.article-callout b{color:#66521d}
+.article-exhort{margin:17px 0 0;color:#4e6259;font-size:13px;line-height:2;text-align:justify}
+.article-body{max-width:980px;padding-top:3px}.article-body h3{margin:22px 0 8px;padding-left:12px;border-left:3px solid var(--vermilion);font-family:var(--brush);font-size:23px;font-weight:400;letter-spacing:2px}.article-body p{margin:0 0 13px;color:#4e6259;font-size:13px;line-height:2;text-align:justify}.article-note{margin:7px 0 16px;padding:9px 13px;background:#f1ead8;color:#756847;font-size:11px;line-height:1.8}.article-origin{color:#65766c!important;font-size:12px!important}.article-summary{padding:14px 16px;background:rgba(244,232,199,.56);border-left:3px solid var(--amber)}
+@media(max-width:980px){.classics-heading{align-items:flex-start;flex-direction:column;gap:8px}.classics-heading>p{text-align:left}.avoid-grid{grid-template-columns:1fr 1fr}.human-column{grid-column:1/-1}}
+@media(max-width:560px){.classics-section{padding:38px 0 0}.classics-heading h2{font-size:31px}.classic-article{padding:18px 15px 20px}.article-ribbon{gap:8px;flex-wrap:wrap}.article-ribbon b{font-size:25px}.article-ribbon small{flex-basis:100%;margin-left:37px}.article-intro,.article-summary,.article-exhort,.article-body p{font-size:12px;line-height:1.9}.avoid-grid{grid-template-columns:1fr;gap:10px}.human-column{grid-column:auto}.avoid-column{padding:13px}.avoid-list li{font-size:10px}.article-body h3{font-size:21px}.article-callout{font-size:11px}}
+@media print{.classics-section{padding-top:20px}.classics-heading{margin-bottom:10px}.classics-heading h2{font-size:25px}.classics-heading>p{font-size:8px}.classic-article{box-shadow:none;padding:14px 16px 16px}.child-article{break-before:page}.article-ribbon{padding-bottom:7px}.article-ribbon b{font-size:21px}.article-ribbon small{font-size:8px}.article-intro,.article-summary,.article-exhort,.article-body p{font-size:9px;line-height:1.65}.avoid-grid{gap:7px;margin-top:10px}.avoid-column{padding:8px}.avoid-column h3{font-size:18px;margin-bottom:5px;padding-bottom:5px}.avoid-list li{font-size:8px;padding:4px 0}.article-callout,.article-note{font-size:8px;line-height:1.55;padding:6px 8px}.article-body h3{font-size:17px;margin:12px 0 5px}}
