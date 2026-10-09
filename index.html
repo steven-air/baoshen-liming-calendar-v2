@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="保身立命戒期日历，查阅每日农历、节气与斋戒提示。">
+  <title>保身立命 · 戒期日历</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="masthead">
+      <div class="masthead-top">
+        <span class="edition" id="mastheadEra">岁次丁未 · 丙午月</span>
+        <span class="masthead-rule" aria-hidden="true"></span>
+        <span class="edition">顺应天时 · 修身养性</span>
+      </div>
+      <div class="masthead-title">
+        <span class="ink-stroke" aria-hidden="true"></span>
+        <div>
+          <p class="kicker">保身立命</p>
+          <h1>戒期日历</h1>
+        </div>
+        <span class="red-seal" aria-label="戒">戒</span>
+      </div>
+      <div class="masthead-bottom">
+        <span>天有时</span><i aria-hidden="true"></i><span>地有气</span><i aria-hidden="true"></i><span>人有道</span>
+      </div>
+    </header>
+
+    <section class="prologue" aria-labelledby="prologue-title">
+      <div class="prologue-label"><span class="label-line"></span><span id="prologue-title">戒期序言</span><span class="label-line"></span></div>
+      <p>福善祸淫的道理，已经说得十分详细了。至于夫妻之间的事，人们往往容易忽视，不知道一年当中，有应该断然斋戒的日子，例如《月令》上说：“春分前三日，官府派人敲击大铃高声通告众人说：‘雷将要发出巨大声响，有不戒除房事者，生下的儿女五官不完整，夫妻一定会有凶险灾难。’”人身的血气运行，原来与天地节气的运行相呼应，倘若违背节气运行规律而流失精气，那么人身的气血运行不能与天地节气的运行协调，对自身精气伤害比平时超过百倍。至于神明降察或圣诞之日，有些人不知道，也不懂得忌讳，而犯淫欲，以至于亵渎冒犯神明，冥冥之中受到谴责而不知。因此世上有人虽循谨忠厚，却常有多病短寿之患，又常有功名被削、年寿被减的祸报，这些往往都是因为不知“非时不淫；非处不淫；恭敬神明，当有所回避和忌讳”的缘故。与其等到报应临头时追悔而无法挽回，不如遵守斋戒以求自新。现恭录斋戒的日期，以及天地人的忌日，希望爱惜自身的人，都遵守它。</p>
+    </section>
+
+    <section class="today-ribbon" aria-live="polite">
+      <div class="today-ribbon-icon">今</div>
+      <div><span class="ribbon-label">今日节律</span><strong id="todaySummary">正在读取今日日期</strong></div>
+      <span class="ribbon-divider"></span>
+      <div class="ribbon-note" id="todayNote">选择一个日期，查看完整戒期提示</div>
+    </section>
+
+    <section class="calendar-stage" aria-labelledby="calendar-title">
+      <div class="calendar-heading">
+        <div>
+          <p class="section-eyebrow">CALENDAR / 01</p>
+          <h2 id="calendar-title">月令清和</h2>
+        </div>
+        <div class="month-actions" aria-label="月份导航">
+          <button class="circle-button" id="prevMonth" type="button" aria-label="上一个月">←</button>
+          <div class="month-heading"><strong id="monthTitle">2027 年 1 月</strong><span id="monthLunar">丙午年 · 腊月</span></div>
+          <button class="circle-button" id="nextMonth" type="button" aria-label="下一个月">→</button>
+          <button class="today-button" id="jumpToday" type="button">回到今天</button>
+        </div>
+      </div>
+
+      <div class="calendar-layout">
+        <div class="calendar-paper">
+          <div class="weekdays" aria-hidden="true"><span>星期一</span><span>星期二</span><span>星期三</span><span>星期四</span><span>星期五</span><span class="weekend">星期六</span><span class="weekend">星期日</span></div>
+          <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="月历"></div>
+          <div class="calendar-footer"><span>顺时 · 顺气 · 顺心</span><span>历法数据沿用原站 1901—2099 计算引擎</span></div>
+        </div>
+
+        <aside class="day-drawer" id="dayDrawer" aria-labelledby="drawerTitle">
+          <div class="drawer-cap"><span>SELECTED DAY</span><span class="drawer-mark">○</span></div>
+          <div class="drawer-date"><span id="drawerWeek">星期一</span><strong id="drawerTitle">2027 年 1 月 1 日</strong><span id="drawerLunar">农历腊月初三</span></div>
+          <div class="drawer-rule"></div>
+          <div class="drawer-section"><span class="drawer-label">本日属性</span><div class="status-stack" id="drawerStatuses"></div></div>
+          <div class="drawer-section"><span class="drawer-label">节气 / 神诞</span><p id="drawerEvents">本日暂无特别标记，宜守常自持。</p></div>
+          <div class="drawer-section"><span class="drawer-label">修身小笺</span><p id="drawerAdvice">清晨整衣，静坐片刻，收摄身心而后行事。</p></div>
+          <button class="drawer-close" id="clearSelection" type="button">清除选择</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="info-deck" aria-label="日历辅助信息">
+      <article class="info-panel legend-panel" aria-labelledby="legendTitle">
+        <div class="panel-kicker">GUIDE / 02</div>
+        <div class="panel-title-row"><h2 id="legendTitle">图例说明</h2><span class="panel-seal">识</span></div>
+        <p class="panel-intro">颜色、圆点与文字并用，打印后仍可清楚辨识。</p>
+        <div class="legend-list">
+          <div class="legend-item major"><span class="legend-mark">忌</span><span><b>大忌之日</b><small>宜静心自守，避重大劳作</small></span></div>
+          <div class="legend-item caution"><span class="legend-mark">戒</span><span><b>戒期之日</b><small>神诞、干支、月晦等提示</small></span></div>
+          <div class="legend-item quiet"><span class="legend-mark">斋</span><span><b>斋戒月</b><small>顺应节气，保养精气</small></span></div>
+          <div class="legend-item term"><span class="legend-mark">节</span><span><b>节气</b><small>青绿色标签标注节令交接</small></span></div>
+          <div class="legend-item clear"><span class="legend-mark">平</span><span><b>本日为毫无忌犯之日 ✓</b><small>宜保精养神 · 清心寡欲</small></span></div>
+          <div class="legend-item current"><span class="legend-mark">今</span><span><b>当前日期</b><small>细金框标记，不覆盖戒期色</small></span></div>
+        </div>
+      </article>
+
+      <article class="info-panel month-panel" aria-labelledby="monthNotesTitle">
+        <div class="panel-kicker">THIS MONTH / 03</div>
+        <div class="panel-title-row"><h2 id="monthNotesTitle">本月重要节气</h2><span class="panel-seal">月</span></div>
+        <p class="panel-intro" id="monthNoteSummary">正在读取本月数据</p>
+        <ul class="month-notes-list" id="monthNotes"></ul>
+      </article>
+
+      <article class="info-panel notes-panel" aria-labelledby="notesTitle">
+        <div class="panel-kicker">NOTES / 04</div>
+        <div class="panel-title-row"><h2 id="notesTitle">天地人忌简表</h2><span class="panel-seal">慎</span></div>
+        <p class="panel-intro">依旧站已有分类整理，作为选日时的随身提醒。</p>
+        <div class="notes-list">
+          <div class="note-row sky"><strong>天忌</strong><span>酷暑严寒、烈风雷雨、天地晦冥；日月薄蚀、虹现地动。</span></div>
+          <div class="note-row earth"><strong>地忌</strong><span>庙宇寺观、井灶厕侧、荒园冢墓及一切不洁不静之处。</span></div>
+          <div class="note-row human"><strong>人忌</strong><span>郁怒醉饱、远行病后、产前产后，及惊恐忧愁之时。</span></div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="site-footer"><span>保身立命 · 戒期日历</span><span>愿以敬畏节气之心，安顿每日身心</span></footer>
+  </main>
+  <script src="calendar-engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
